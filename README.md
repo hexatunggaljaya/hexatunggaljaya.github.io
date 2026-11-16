@@ -1,2 +1,5 @@
-# hexatunggaljaya.github.io
-Halaman sistem.hexatunggaljaya.co.id - Sistem Hexa P. Hexa Tunggal Jaya
+# Sistem Hexa
+
+Halaman sistem.hexatunggaljaya.co.id – PT. Hexa Tunggal Jaya.
+
+/ Portal · /penjualan · /hrga · /logops · /operasional · /siaran · /tv
