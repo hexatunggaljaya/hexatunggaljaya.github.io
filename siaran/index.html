@@ -1,63 +1,354 @@
-<!doctype html>
-<html lang="id"><head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Panel Siaran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panel Siaran – PT. Hexa Tunggal Jaya</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#002957">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Panel Siaran">
-<meta name="application-name" content="Panel Siaran">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5">
-<link rel="icon" type="image/png" href="/apple-touch-icon.png?v=5">
+<meta name="theme-color" content="#071a36">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6">
+<link rel="icon" type="image/png" href="/apple-touch-icon.png?v=6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus&#43;Jakarta&#43;Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F3F6FA;--card:#fff;--tx:#0B1B2E;--mut:#5B6B7F;--pri:#0665CF;--line:#E3E9F1}
-@media (prefers-color-scheme:dark){:root{--bg:#071526;--card:#0E2238;--tx:#EAF1F9;--mut:#9FB2C8;--line:#1D3550}
-.mark [fill="#002957"]{fill:#fff}}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,system-ui,Segoe UI,Roboto,sans-serif;padding:16px}
-.card{background:var(--card);border-radius:24px;padding:34px 24px;max-width:400px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,41,87,.12)}
-.mark{width:84px;height:auto}
-h1{font-size:26px;font-weight:800;letter-spacing:-.02em;margin:16px 0 4px}
-.sub{color:var(--mut);margin:0 0 22px;font-size:14px}
-a.btn{display:block;background:var(--pri);color:#fff;text-decoration:none;font-weight:700;padding:15px;border-radius:14px;font-size:17px}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pri);margin:0 3px;animation:b 1s infinite alternate}
-.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
-@keyframes b{to{opacity:.2}}
-[hidden]{display:none!important}
-.tip{color:var(--mut);font-size:13px;margin:16px 0 0}
-</style>
-</head><body>
-<main class="card">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 6 50 57" class="mark" role="img" aria-label="PT. Hexa Tunggal Jaya">
-<polygon fill="#002957" points="20,9 1,20.5 1,48.5 20,59.5 20,53.5 6.5,45.5 6.5,23.5 15,18.5 15,43.5 20,46.5 20,36 31,36 31,30 20,30"/>
-<polygon fill="#0665CF" points="36,15.5 45,20.5 45,48.5 25.5,59.5 25,59.2 25,36 31,36 31,50.5 39.5,45.5 39.5,23.5 36,21.5"/>
-<polygon fill="#002957" points="25,15 31,18 31,25 25,25"/>
-<polygon fill="#0665CF" points="25,9 31,12.5 31,18 25,15"/>
-</svg>
-<h1>Panel Siaran</h1>
-<div id="buka">
-<p class="sub">Membuka Aplikasi <span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
-<a class="btn" id="btn1" href="#">Buka Panel Siaran</a>
-</div>
-<div id="pasang" hidden>
-<p class="sub">Musik &amp; Pengumuman Ke Semua TV</p>
-<a class="btn" id="btn2" href="#">Buka Aplikasi</a>
-<p class="tip">Simpan Di Layar Utama: Ketuk <b>Bagikan</b> Lalu <b>Tambah Ke Layar Utama</b></p>
-</div>
-</main>
-<script>
-var APP = "https://script.google.com/macros/s/AKfycbyx6yUpGWq8bnVYwunVl6tyFC9hHwBnqoWwHJ4KL7IpreYgLjuJy8LqwLCngGbHyEUk/exec?tampilan=siaran";
-document.getElementById('btn1').href = APP;
-document.getElementById('btn2').href = APP;
-var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-var dariIkon = /[?&]app\b/.test(location.search) || navigator.standalone;
-if (ios && !dariIkon) {
-  document.getElementById('buka').hidden = true;
-  document.getElementById('pasang').hidden = false;
-  try { history.replaceState(null, '', location.pathname + '?app'); } catch (e) {}
-} else {
-  setTimeout(function () { location.replace(APP); }, dariIkon ? 0 : 600);
+:root{--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);--txt:#f4f7fb;--mut:#8ea3c0;--blue:#0665CF;--sky:#4aa3ff;--hijau:#22c55e;--kuning:#facc15;--merah:#ef4444}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#020b1c}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--txt);background:linear-gradient(180deg,#0d2a55 0%,#071a36 300px,#020b1c 820px) #020b1c;min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) 16px 48px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+header svg{height:38px;width:auto}
+header .bar{width:2px;height:32px;background:rgba(255,255,255,.55)}
+header .wm{font-weight:700;letter-spacing:.14em;font-size:11px;line-height:1.35}
+h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:4px 0 4px}
+.sub{color:var(--mut);font-size:14px;font-weight:500;margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+.card h2{font-size:19px;font-weight:800;margin-bottom:4px}
+.card p.k{color:var(--mut);font-size:13px;margin-bottom:14px;line-height:1.45;font-weight:500}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:14px;padding:15px;font:inherit;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(135deg,#0665CF,#4aa3ff);cursor:pointer;text-align:center;-webkit-tap-highlight-color:transparent}
+.btn.merah{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+.btn.abu{background:rgba(255,255,255,.08);border:1px solid var(--line)}
+.btn.emas{background:linear-gradient(135deg,#a16207,#facc15);color:#1a1300}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.4}
+.mic{height:130px;font-size:20px;border-radius:22px}
+.mic.rekam{background:linear-gradient(135deg,#b91c1c,#ef4444);animation:nadi 1.2s ease-in-out infinite}
+@keyframes nadi{50%{box-shadow:0 0 0 10px rgba(239,68,68,.25)}}
+.opsi{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 2px;font-size:15px;font-weight:700;border-top:1px solid var(--line);margin-top:14px}
+.opsi small{display:block;font-size:12px;color:var(--mut);font-weight:500;margin-top:2px}
+.sw{position:relative;width:50px;height:30px;flex:0 0 auto}
+.sw input{opacity:0;width:0;height:0}
+.sw span{position:absolute;inset:0;border-radius:999px;background:rgba(255,255,255,.18);transition:.2s}
+.sw span:before{content:'';position:absolute;left:3px;top:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
+.sw input:checked+span{background:var(--hijau)}
+.sw input:checked+span:before{transform:translateX(20px)}
+.tabs{display:flex;gap:6px;padding:5px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid var(--line);margin-bottom:14px;position:sticky;top:max(8px,env(safe-area-inset-top));z-index:5;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.tabs button{flex:1;border:0;border-radius:12px;padding:12px 6px;font:inherit;font-size:15px;font-weight:800;color:var(--mut);background:transparent;cursor:pointer}
+.tabs button.on{color:#fff;background:linear-gradient(135deg,#0665CF,#4aa3ff)}
+.lagu{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);margin-bottom:8px;cursor:pointer;font-weight:700;font-size:15px}
+.lagu.on{border-color:rgba(34,197,94,.6);background:rgba(34,197,94,.12)}
+.lagu i{font-style:normal;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);flex:0 0 auto;font-size:12px}
+.player{background:linear-gradient(160deg,rgba(6,101,207,.28),rgba(255,255,255,.04));border-color:rgba(74,163,255,.4)}
+.np{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.np .art{width:58px;height:58px;border-radius:14px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,#0665CF,#4aa3ff)}
+.np .art.diam{background:rgba(255,255,255,.08);color:var(--mut)}
+.np b{display:block;font-size:17px;font-weight:800;line-height:1.3}
+.np span{display:block;font-size:13px;color:var(--mut);font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.kendali{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:6px}
+.kendali button{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:18px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.kendali button.besar{width:74px;height:74px;font-size:26px;border:0;background:linear-gradient(135deg,#0665CF,#4aa3ff)}
+.kendali button.stop{color:#fca5a5}
+.kendali button:disabled{opacity:.35}
+.lbl-k{display:flex;justify-content:center;gap:14px;font-size:11px;color:var(--mut);font-weight:700;margin-bottom:6px}
+.lbl-k span{width:56px;text-align:center}.lbl-k span.besar{width:74px}
+.vol{display:flex;align-items:center;gap:12px;font-weight:800;font-size:16px;margin-top:10px}
+.vol input{flex:1;accent-color:#4aa3ff;height:30px}
+.vol b{min-width:54px;text-align:right}
+textarea{width:100%;min-height:130px;resize:vertical;padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--txt);font:inherit;font-size:18px;font-weight:700;line-height:1.4;outline:none}
+textarea:focus{border-color:var(--sky)}
+.hitung{text-align:right;font-size:12px;color:var(--mut);font-weight:600;margin:6px 2px 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--txt);border-radius:999px;padding:9px 13px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.chips button.on{border-color:transparent;background:linear-gradient(135deg,#0665CF,#4aa3ff)}
+.judul-k{font-size:13px;font-weight:800;color:var(--mut);margin:14px 0 8px}
+.tampil-box{padding:14px;border-radius:14px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.5);margin-bottom:12px}
+.tampil-box b{display:block;font-size:12px;color:#86efac;font-weight:800;margin-bottom:6px}
+.tampil-box div{font-size:16px;font-weight:800;line-height:1.35;white-space:pre-wrap;word-break:break-word}
+.tv{display:flex;flex-wrap:wrap;gap:8px}
+.tv span{padding:8px 12px;border-radius:999px;font-size:13px;font-weight:700;border:1px solid var(--line)}
+.tv .on{border-color:rgba(34,197,94,.6);background:rgba(34,197,94,.14)}
+.tv .bisu{border-color:rgba(250,204,21,.6);background:rgba(250,204,21,.12)}
+.tv .off{color:var(--mut)}
+.pin input{width:100%;padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--txt);font:inherit;font-size:24px;letter-spacing:.4em;text-align:center;margin-bottom:12px;outline:none}
+.pin input:focus{border-color:var(--sky)}
+.toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);padding:12px 18px;border-radius:14px;background:#0f2a4f;border:1px solid rgba(74,163,255,.5);font-weight:700;font-size:14px;display:none;z-index:9;max-width:90%;text-align:center}
+.hide{display:none!important}
+.kecil{font-size:12px;color:var(--mut);margin-top:10px;line-height:1.55;font-weight:500}
+@media (min-width:900px){
+  .wrap{max-width:720px;padding:32px 32px 48px}
+  h1{font-size:38px}
+  .pin{max-width:440px}
 }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg viewBox="0 8 46 52" aria-label="Logo PT. Hexa Tunggal Jaya">
+      <polygon fill="#4aa3ff" points="25,9 31,12.5 31,18 25,15"/>
+      <polygon fill="#ffffff" points="25,15 31,18 31,25 25,25"/>
+      <polygon fill="#ffffff" points="20,9 1,20.5 1,48.5 20,59.5 20,53.5 6.5,45.5 6.5,23.5 15,18.5 15,43.5 20,46.5 20,36 31,36 31,30 20,30"/>
+      <polygon fill="#4aa3ff" points="36,15.5 45,20.5 45,48.5 25.5,59.5 25,59.2 25,36 31,36 31,50.5 39.5,45.5 39.5,23.5 36,21.5"/>
+    </svg>
+    <div class="bar"></div>
+    <div class="wm">PT. HEXA<br>TUNGGAL JAYA</div>
+  </header>
+  <h1>Panel Siaran</h1>
+  <div class="sub">Musik &amp; Pengumuman Ke Semua TV</div>
+
+  <div id="layarPin" class="card pin">
+    <h2>Masukkan PIN Siaran</h2>
+    <p class="k">PIN Ada Di Tab PENGATURAN Pada Sheet Database Progress Harian.</p>
+    <input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="12" onkeydown="if(event.key==='Enter')masuk()">
+    <button class="btn" onclick="masuk()">Buka Panel</button>
+  </div>
+
+  <div id="layarPanel" class="hide">
+    <div class="card">
+      <h2>TV Tersambung</h2>
+      <p class="k" id="tvKet">Memuat…</p>
+      <div class="tv" id="tvList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Tampilan TV</h2>
+      <p class="k">Berlaku Untuk Semua TV Dalam Beberapa Detik.</p>
+      <style>.tema-pil{display:flex;gap:10px;margin-top:10px}.tema-pil button{flex:1;padding:14px 10px;border-radius:14px;border:2px solid rgba(127,140,160,.35);font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+      .tema-pil button[data-tema=gelap]{background:#0b1b33;color:#fff}.tema-pil button[data-tema=terang]{background:#fff;color:#0b1b33}.tema-pil button.aktif{border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.35)}</style>
+      <div class="tema-pil">
+        <button data-tema="gelap" onclick="aksi('tema',{tema:'gelap'})">🌙 Gelap</button>
+        <button data-tema="terang" onclick="aksi('tema',{tema:'terang'})">☀️ Terang</button>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button data-tab="teks">Teks</button>
+      <button data-tab="suara">Suara</button>
+      <button data-tab="musik">Musik</button>
+    </div>
+
+    <div id="tab-teks">
+      <div class="card">
+        <h2>Pengumuman Teks</h2>
+        <p class="k">Ketik Pengumuman, Lalu Tampil Besar Di Layar Semua TV.</p>
+        <div class="tampil-box hide" id="teksAktif"><b id="teksSisa">Sedang Tampil Di TV</b><div id="teksIsiAktif"></div></div>
+        <button class="btn merah hide" id="btnHapusTeks" onclick="aksi('hapusTeks');toast('Pengumuman Dihapus Dari Layar TV')" style="margin-bottom:14px">Hapus Dari Layar TV</button>
+        <textarea id="teks" maxlength="500" placeholder="Ketik Pengumuman Di Sini…" oninput="hitungTeks()"></textarea>
+        <div class="hitung" id="teksHitung">0 / 500</div>
+        <div class="judul-k">Teks Cepat</div>
+        <div class="chips" id="cepat">
+          <button>Mohon Semua Karyawan Berkumpul Di Lantai 1 Kantor</button>
+          <button>Kendaraan Pengiriman Sudah Siap Berangkat</button>
+          <button>Ada Tamu Di Depan, Mohon Dibantu</button>
+          <button>Jangan Lupa Absen Pulang</button>
+        </div>
+        <div class="judul-k">Lama Tampil</div>
+        <div class="chips" id="durasi">
+          <button data-d="15">15 Detik</button>
+          <button data-d="30" class="on">30 Detik</button>
+          <button data-d="60">1 Menit</button>
+          <button data-d="180">3 Menit</button>
+          <button data-d="300">5 Menit</button>
+        </div>
+        <div class="opsi"><span>Bunyi Ding-Dong Dulu</span><label class="sw"><input type="checkbox" id="teksDing" checked><span></span></label></div>
+        <div class="opsi"><span>Bacakan Dengan Suara<small>Suara Robot Bahasa Indonesia, Tergantung Dukungan TV</small></span><label class="sw"><input type="checkbox" id="teksBaca"><span></span></label></div>
+        <button class="btn" onclick="kirimTeks()" style="margin-top:16px">Tampilkan Di Semua TV</button>
+      </div>
+    </div>
+
+    <div id="tab-suara" class="hide">
+      <div class="card">
+        <h2>Pengumuman Suara</h2>
+        <p class="k" id="umumKet">Tekan Tombol, Bicara, Lalu Tekan Lagi Untuk Mengirim Ke Semua TV.</p>
+        <button class="btn mic" id="btnMic" onclick="tombolMic()">Mulai Bicara</button>
+        <div id="fileWrap" class="hide">
+          <label class="btn" for="fileSuara">Pilih Rekaman Suara</label>
+          <input id="fileSuara" type="file" accept="audio/*,.m4a,.mp3,.wav,.aac" class="hide" onchange="kirimFileSuara(this)">
+          <p class="kecil">Tekan Mulai Bicara, Ketuk Izinkan Saat Diminta Akses Mikrofon, Lalu Tekan Lagi Untuk Mengirim Ke Semua TV. Bisa Juga Pilih Rekaman Dari File.</p>
+        </div>
+        <button class="btn emas" onclick="aksi('dingdong');toast('Ding-Dong Dibunyikan Di Semua TV')" style="margin-top:12px">Bunyikan Ding-Dong Saja</button>
+        <div class="opsi"><span>Bunyi Ding-Dong Sebelum Rekaman</span><label class="sw"><input type="checkbox" id="ding" checked><span></span></label></div>
+        <button class="btn abu hide" id="btnUlang" onclick="aksi('ulangiSuara')" style="margin-top:12px">Ulangi Pengumuman Terakhir</button>
+      </div>
+    </div>
+
+    <div id="tab-musik" class="hide">
+      <div class="card">
+        <h2>Daftar Lagu</h2>
+        <p class="k">Ketuk Lagu Untuk Diputar Di Semua TV.</p>
+        <div id="laguList"></div>
+        <label class="btn abu" for="fileLagu" style="margin-top:6px">Tambah Lagu</label>
+        <input id="fileLagu" type="file" accept="audio/*,.mp3,.m4a" class="hide" onchange="tambahLagu(this)">
+        <p class="kecil">Lagu Juga Bisa Langsung Ditaruh Di Google Drive: Folder Progress Harian → Siaran → Musik.</p>
+      </div>
+      <div class="card player">
+        <h2 style="margin-bottom:14px">Pemutar Musik</h2>
+        <div class="np"><div class="art diam" id="npArt">♪</div><div><b id="npJudul">Belum Ada Lagu Diputar</b><span id="npWaktu">Pilih Lagu Atau Tekan Putar</span></div></div>
+        <div class="kendali">
+          <button onclick="geser(-1)" id="kPrev" aria-label="Sebelumnya">⏮</button>
+          <button class="besar" onclick="putarJeda()" id="kMain" aria-label="Putar">▶</button>
+          <button onclick="geser(1)" id="kNext" aria-label="Berikutnya">⏭</button>
+          <button class="stop" onclick="aksi('stop')" id="kStop" aria-label="Stop">⏹</button>
+        </div>
+        <div class="lbl-k"><span>Sebelumnya</span><span class="besar" id="kMainLbl">Putar</span><span>Berikutnya</span><span>Stop</span></div>
+        <div class="opsi"><span>Ulang Lagu Terus</span><label class="sw"><input type="checkbox" id="ulang" checked onchange="aksi('ulang',{ulang:this.checked})"><span></span></label></div>
+        <div class="opsi" style="border-top:0;padding-top:4px"><span>Volume Musik<small>Di Dalam Batas Volume TV Masing-Masing</small></span></div>
+        <div class="vol"><input type="range" id="vol" min="0" max="100" step="5" value="80" oninput="volTampil(this.value)" onchange="aksi('volume',{volume:this.value})"><b id="volTxt">80%</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var PIN='', DATA=null, rek=null, potong=[], OFFSET=0, DURASI=30, TAB='teks';
+var MIC_OK=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder);
+try{ if(document.featurePolicy&&document.featurePolicy.allowsFeature&&!document.featurePolicy.allowsFeature('microphone')) MIC_OK=false; }catch(e){}
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function title(s){return String(s||'').toLowerCase().replace(/(^|[\s.(\/-])([a-z])/g,function(m,a,b){return a+b.toUpperCase()}).replace(/\bPt\b/g,'PT').replace(/\bCv\b/g,'CV').replace(/\bTv\b/g,'TV')}
+function pad(n){return (n<10?'0':'')+n}
+function mmss(d){ d=Math.max(0,Math.floor(d)); return pad(Math.floor(d/60))+'.'+pad(d%60); }
+function toast(t,ms){var e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(function(){e.style.display='none'},ms||2600)}
+var API='https://script.google.com/macros/s/AKfycbyx6yUpGWq8bnVYwunVl6tyFC9hHwBnqoWwHJ4KL7IpreYgLjuJy8LqwLCngGbHyEUk/exec';
+function run(fn,args,ok){
+  function gagal(m){
+    if(/PIN Salah/.test(m)){ try{localStorage.removeItem('htj_pin')}catch(x){} PIN=''; $('layarPanel').classList.add('hide'); $('layarPin').classList.remove('hide'); toast('PIN Salah'); }
+    else toast('Gagal: '+m,4500);
+  }
+  fetch(API,{method:'POST',body:JSON.stringify({api:'panel',fn:fn,args:args})})
+    .then(function(r){ return r.json(); })
+    .then(function(j){ if(j&&j.ok) ok(j.data); else gagal((j&&j.err)||'Tidak Ada Jawaban'); })
+    .catch(function(e){ gagal('Koneksi Terputus, Coba Lagi'); });
+}
+function bukaPanel(d){ $('layarPin').classList.add('hide'); $('layarPanel').classList.remove('hide'); tampil(d); }
+function masuk(){
+  var p=$('pin').value.trim(); if(!p){toast('Isi PIN Dulu');return;}
+  PIN=p; run('panelData',[PIN],function(d){ try{localStorage.setItem('htj_pin',PIN)}catch(e){} bukaPanel(d); });
+}
+function muatUlang(){ if(PIN && !document.hidden) run('panelData',[PIN],tampil); }
+function aksi(a,d,cb){ run('panelAksi',[PIN,a,d||{}],function(x){ tampil(x); if(a==='ulangiSuara') toast('Pengumuman Diputar Ulang Di Semua TV'); if(cb) cb(x); }); }
+function volTampil(v){ $('volTxt').textContent=v+'%'; }
+function pilihTab(t){
+  TAB=t; try{localStorage.setItem('htj_tab',t)}catch(e){}
+  ['teks','suara','musik'].forEach(function(n){ $('tab-'+n).classList.toggle('hide',n!==t); });
+  [].forEach.call(document.querySelectorAll('#tabs button'),function(b){ b.classList.toggle('on',b.getAttribute('data-tab')===t); });
+}
+$('tabs').addEventListener('click',function(e){ var b=e.target.closest('button'); if(b) pilihTab(b.getAttribute('data-tab')); });
+function tampil(d){
+  DATA=d;
+  try{ var tm=((d.siaran||d.st||d)||{}).tema||'gelap'; document.querySelectorAll('.tema-pil button').forEach(function(b){ b.classList.toggle('aktif', b.getAttribute('data-tema')===tm); }); }catch(e){} OFFSET=(d.sekarang||Date.now())-Date.now();
+  var s=d.siaran||{}, m=s.musik||{status:'stop'};
+  var on=d.tv.filter(function(t){return t.online});
+  $('tvKet').textContent=on.length+' TV Online'+(d.tv.length>on.length?' · '+(d.tv.length-on.length)+' Offline':'');
+  $('tvList').innerHTML=d.tv.length?d.tv.map(function(t){
+    var k=!t.online?'off':(t.suara?'on':'bisu');
+    return '<span class="'+k+'">'+esc(title(t.nama))+(!t.online?' · Offline':(t.suara?'':' · Suara Diblokir (Tekan Tombol Remote)'))+'</span>';
+  }).join(''):'<span class="off">Belum Ada TV Yang Tersambung</span>';
+  if(document.activeElement!==$('vol')){ $('vol').value=s.volume; volTampil(s.volume); }
+  $('ulang').checked=m.ulang!==false;
+  $('laguList').innerHTML=d.lagu.length?d.lagu.map(function(l){
+    var aktif=m.id===l.id&&m.status!=='stop';
+    return '<div class="lagu'+(aktif?' on':'')+'" data-id="'+esc(l.id)+'"><i>'+(aktif?'♪':'▶')+'</i>'+esc(title(l.judul))+'</div>';
+  }).join(''):'<p class="kecil" style="margin:0 0 10px">Belum Ada Lagu. Tambahkan Lewat Tombol Di Bawah.</p>';
+  $('btnUlang').classList.toggle('hide',!s.suara);
+  tampilPemutar(); tampilTeks();
+}
+function tampilPemutar(){
+  if(!DATA) return;
+  var m=(DATA.siaran&&DATA.siaran.musik)||{status:'stop'}, ada=m.status!=='stop'&&m.judul, n=DATA.lagu.length;
+  $('npArt').classList.toggle('diam',!ada||m.status==='jeda');
+  $('npJudul').textContent=ada?title(m.judul):'Belum Ada Lagu Diputar';
+  if(ada){
+    var pos=m.status==='main'?m.posisi+(Date.now()+OFFSET-m.mulai)/1000:m.posisi;
+    $('npWaktu').textContent=(m.status==='main'?'Sedang Diputar · ':'Dijeda · ')+mmss(pos);
+  } else $('npWaktu').textContent=n?'Pilih Lagu Atau Tekan Putar':'Tambahkan Lagu Dulu';
+  $('kMain').textContent=m.status==='main'?'⏸':'▶';
+  $('kMainLbl').textContent=m.status==='main'?'Jeda':(m.status==='jeda'?'Lanjut':'Putar');
+  $('kMain').disabled=!n; $('kPrev').disabled=n<2; $('kNext').disabled=n<2; $('kStop').disabled=!ada;
+}
+function putar(id){ toast('Memutar Di Semua TV…'); aksi('putar',{id:id,ulang:$('ulang').checked}); }
+function putarJeda(){
+  var m=(DATA&&DATA.siaran&&DATA.siaran.musik)||{status:'stop'};
+  if(m.status==='main') aksi('jeda'); else if(m.status==='jeda') aksi('lanjut'); else if(DATA.lagu.length) putar(DATA.lagu[0].id);
+}
+function geser(arah){
+  var L=DATA&&DATA.lagu||[]; if(!L.length) return;
+  var m=(DATA.siaran&&DATA.siaran.musik)||{}, i=-1;
+  L.forEach(function(l,k){ if(l.id===m.id) i=k; });
+  var j=i<0?0:(i+arah+L.length)%L.length; putar(L[j].id);
+}
+document.addEventListener('click',function(e){ var el=e.target.closest&&e.target.closest('.lagu'); if(el) putar(el.getAttribute('data-id')); });
+function hitungTeks(){ $('teksHitung').textContent=$('teks').value.length+' / 500'; }
+$('cepat').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; $('teks').value=b.textContent; hitungTeks(); });
+$('durasi').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; DURASI=Number(b.getAttribute('data-d')); [].forEach.call(this.children,function(c){c.classList.toggle('on',c===b)}); });
+function kirimTeks(){
+  var isi=$('teks').value.trim(); if(!isi){ toast('Ketik Pengumuman Dulu'); return; }
+  toast('Mengirim Ke Semua TV…',8000);
+  aksi('teks',{isi:isi,durasi:DURASI,dingdong:$('teksDing').checked,baca:$('teksBaca').checked},function(){ toast('Tampil Di Semua TV Dalam Beberapa Detik'); $('teks').value=''; hitungTeks(); });
+}
+function tampilTeks(){
+  if(!DATA) return;
+  var t=DATA.siaran&&DATA.siaran.teks, now=Date.now()+OFFSET, aktif=t&&now<t.sampai;
+  $('teksAktif').classList.toggle('hide',!aktif); $('btnHapusTeks').classList.toggle('hide',!aktif);
+  if(aktif){ $('teksIsiAktif').textContent=t.isi; $('teksSisa').textContent='Sedang Tampil Di TV · Sisa '+Math.ceil((t.sampai-now)/1000)+' Detik'; }
+}
+function tampilFile(){ $('btnMic').classList.add('hide'); $('fileWrap').classList.remove('hide'); $('umumKet').textContent='Pilih Rekaman Suara, Lalu Otomatis Dikirim Ke Semua TV.'; }
+function tombolMic(){
+  if(!MIC_OK){ tampilFile(); return; }
+  if(rek&&rek.state==='recording'){ rek.stop(); return; }
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){
+    potong=[];
+    var tipe=['audio/mp4','audio/webm;codecs=opus','audio/webm'].filter(function(t){return MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t)})[0];
+    rek=tipe?new MediaRecorder(st,{mimeType:tipe}):new MediaRecorder(st);
+    rek.ondataavailable=function(e){ if(e.data&&e.data.size) potong.push(e.data); };
+    rek.onstop=function(){
+      st.getTracks().forEach(function(t){t.stop()});
+      $('btnMic').classList.remove('rekam'); $('btnMic').textContent='Mulai Bicara'; clearTimeout(rek._t);
+      kirimBlob(new Blob(potong,{type:rek.mimeType||tipe||'audio/webm'}),'Rekaman');
+    };
+    rek.start(); $('btnMic').classList.add('rekam'); $('btnMic').textContent='Bicara Sekarang… Tekan Untuk Kirim';
+    rek._t=setTimeout(function(){ if(rek.state==='recording') rek.stop(); },120000);
+  }).catch(function(){ MIC_OK=false; tampilFile(); toast('Mikrofon Tidak Bisa Dibuka Di Halaman Ini',3500); });
+}
+function kirimFileSuara(inp){ var f=inp.files[0]; inp.value=''; if(f) kirimBlob(f,f.name); }
+function kirimBlob(b,nama){
+  if(!b.size){ toast('Rekaman Kosong'); return; }
+  if(b.size>15*1024*1024){ toast('File Terlalu Besar (Maks 15 MB)'); return; }
+  toast('Mengirim Pengumuman…',30000);
+  var fr=new FileReader();
+  fr.onload=function(){ run('panelAksi',[PIN,'suara',{b64:String(fr.result).split(',')[1],mime:b.type||'audio/mp4',nama:nama,dingdong:$('ding').checked}],function(x){ tampil(x); toast('Terkirim. Semua TV Memutar Dalam Beberapa Detik.',4000); }); };
+  fr.readAsDataURL(b);
+}
+function tambahLagu(inp){
+  var f=inp.files[0]; inp.value=''; if(!f) return;
+  if(f.size>40*1024*1024){ toast('File Terlalu Besar (Maks 40 MB)'); return; }
+  toast('Mengunggah Lagu…',90000);
+  var fr=new FileReader();
+  fr.onload=function(){ run('panelAksi',[PIN,'tambahLagu',{b64:String(fr.result).split(',')[1],mime:f.type||'audio/mpeg',nama:f.name}],function(x){ tampil(x); toast('Lagu Ditambahkan'); }); };
+  fr.readAsDataURL(f);
+}
+(function(){
+  if(!MIC_OK) tampilFile();
+  try{ TAB=localStorage.getItem('htj_tab')||'teks'; }catch(e){}
+  pilihTab(TAB);
+  try{ PIN=localStorage.getItem('htj_pin')||''; }catch(e){}
+  if(PIN) run('panelData',[PIN],bukaPanel);
+  setInterval(muatUlang,8000);
+  setInterval(function(){ tampilPemutar(); tampilTeks(); },1000);
+})();
 </script>
-</body></html>
+</body>
+</html>
