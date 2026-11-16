@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TV Operasional – PT. Hexa Tunggal Jaya</title>
+<style>
+html,body{margin:0;height:100%;background:#020b1c;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#020b1c}
+#fs{position:fixed;left:50%;bottom:6vh;transform:translateX(-50%);z-index:9;background:linear-gradient(135deg,#0665CF,#4aa3ff);color:#fff;border:0;border-radius:999px;padding:1.1em 2.4em;font:inherit;font-size:clamp(16px,1.6vw,34px);font-weight:800;box-shadow:0 .6em 2em rgba(0,0,0,.5);cursor:pointer;outline:none}
+#fs:focus{box-shadow:0 0 0 .3em rgba(255,255,255,.9),0 .6em 2em rgba(0,0,0,.5)}
+.full #fs{display:none}
+#tutup{position:fixed;inset:0;z-index:8;background:transparent;cursor:none}
+#tutup.lihat{cursor:default}
+html.full,html.full body{cursor:none}
+</style>
+</head>
+<body>
+<iframe id="app" allow="fullscreen" allowfullscreen title="Progress Harian"></iframe>
+<div id="tutup"></div>
+<button id="fs" autofocus onclick="layarPenuh()">Tekan OK Untuk Layar Penuh</button>
+<script>
+var APP='https://script.google.com/macros/s/AKfycbyx6yUpGWq8bnVYwunVl6tyFC9hHwBnqoWwHJ4KL7IpreYgLjuJy8LqwLCngGbHyEUk/exec';
+var q=location.search.replace(/^\?/,'');
+if(!/(^|&)tampilan=/.test(q)) q=(q?q+'&':'')+'tampilan=tv';
+document.getElementById('app').src=APP+'?'+q;
+function layarPenuh(){
+  var el=document.documentElement;
+  var f=el.requestFullscreen||el.webkitRequestFullscreen||el.webkitRequestFullScreen||el.mozRequestFullScreen||el.msRequestFullscreen;
+  try{ if(f){ var p=f.call(el); if(p&&p.catch) p.catch(function(){}); } }catch(e){}
+  el.className='full';
+}
+function cek(){ if(!(document.fullscreenElement||document.webkitFullscreenElement)) document.documentElement.className=''; }
+document.addEventListener('fullscreenchange',cek); document.addEventListener('webkitfullscreenchange',cek);
+document.addEventListener('keydown',function(e){ if(e.keyCode===13) layarPenuh(); });
+window.onload=function(){ try{document.getElementById('fs').focus()}catch(e){} };
+// Kursor: tersembunyi, baru muncul saat tombol remote/mouse ditekan, hilang lagi 3 detik kemudian
+var tt=document.getElementById('tutup'), tk;
+function lihatKursor(){ tt.className='lihat'; clearTimeout(tk); tk=setTimeout(function(){ tt.className=''; },3000); }
+['mousedown','keydown','wheel','touchstart'].forEach(function(n){ document.addEventListener(n,lihatKursor,true); });
+// Muat ulang tiap 6 jam supaya TV tidak macet
+setTimeout(function(){location.reload()},6*3600*1000);
+</script>
+</body>
+</html>
