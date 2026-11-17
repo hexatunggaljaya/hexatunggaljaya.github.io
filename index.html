@@ -53,11 +53,10 @@ var APP = "https://script.google.com/macros/s/AKfycbwij4WsBGalomFrmlvd7XMJEnrZRi
 document.getElementById('btn1').href = APP;
 document.getElementById('btn2').href = APP;
 var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-var dariIkon = /[?&]app\b/.test(location.search) || navigator.standalone;
+var dariIkon = !!navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
 if (ios && !dariIkon) {
   document.getElementById('buka').hidden = true;
   document.getElementById('pasang').hidden = false;
-  try { history.replaceState(null, '', location.pathname + '?app'); } catch (e) {}
 } else {
   setTimeout(function () { location.replace(APP); }, dariIkon ? 0 : 600);
 }
