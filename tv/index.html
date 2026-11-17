@@ -13,6 +13,9 @@ iframe{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;back
 #tutup{position:fixed;inset:0;z-index:8;background:transparent;cursor:none}
 #tutup.lihat{cursor:default}
 html.full,html.full body{cursor:none}
+/* Saat TV minta PIN: lapisan pelindung & tombol layar penuh disingkirkan supaya kotak PIN bisa ditekan */
+html.pin #tutup,html.pin #fs{display:none!important}
+html.pin,html.pin body{cursor:default!important}
 </style>
 </head>
 <body>
@@ -32,12 +35,15 @@ function layarPenuh(){
 }
 function cek(){ if(!(document.fullscreenElement||document.webkitFullscreenElement)) document.documentElement.className=''; }
 document.addEventListener('fullscreenchange',cek); document.addEventListener('webkitfullscreenchange',cek);
-document.addEventListener('keydown',function(e){ if(e.keyCode===13) layarPenuh(); });
+document.addEventListener('keydown',function(e){ if(e.keyCode===13 && !MINTA_PIN) layarPenuh(); });
 window.onload=function(){ try{document.getElementById('fs').focus()}catch(e){} };
 // Kursor: tersembunyi, baru muncul saat tombol remote/mouse ditekan, hilang lagi 3 detik kemudian
 var tt=document.getElementById('tutup'), tk;
 function lihatKursor(){ tt.className='lihat'; clearTimeout(tk); tk=setTimeout(function(){ tt.className=''; },3000); }
 ['mousedown','keydown','wheel','touchstart'].forEach(function(n){ document.addEventListener(n,lihatKursor,true); });
+// Kotak PIN TV (dari dalam halaman TV): buka akses ke kotak PIN, kunci lagi setelah PIN benar
+var MINTA_PIN=false;
+window.addEventListener('message',function(e){ var d=e.data||{}; if(d.hx!=='pinTv') return; MINTA_PIN=!!d.on; document.documentElement.classList.toggle('pin',MINTA_PIN); if(MINTA_PIN){ try{document.getElementById('app').focus();}catch(x){} } else { try{document.getElementById('fs').focus();}catch(x){} } });
 // Muat ulang tiap 6 jam supaya TV tidak macet
 setTimeout(function(){location.reload()},6*3600*1000);
 </script>
