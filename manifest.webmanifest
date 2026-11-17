@@ -1,0 +1,17 @@
+{
+  "name": "Hexa Tunggal Jaya",
+  "short_name": "Hexa Tunggal Jaya",
+  "start_url": "/?app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#002957",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
