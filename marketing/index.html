@@ -1,0 +1,240 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F2F5FA"><title>Marketing – Hexa Tunggal Jaya</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://bot-whatsapp.solitary-cherry-e5b5.workers.dev; img-src 'self' data: blob:; base-uri 'none'; form-action 'none'"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Marketing"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=8"><link rel="icon" type="image/png" href="/favicon-hexa.png"><style>
+:root{color-scheme:light;--bg:#F2F5FA;--card:#FFFFFF;--ink:#0B1B33;--muted:#5B6B82;--line:#E1E7F0;--pri:#002957;--acc:#0665CF;--soft:#E6EEF9;--out:#E0384F;--radius:18px;--shadow:0 6px 24px rgba(0,41,87,.08);--atas:rgba(242,245,250,.86)}
+html.dark{color-scheme:dark;--bg:#06142B;--card:#0D2142;--ink:#EAF1FF;--muted:#8FA6C8;--line:#1B355C;--pri:#0665CF;--acc:#4C9BFF;--soft:#12305A;--out:#FF6B7F;--shadow:0 10px 30px rgba(0,0,0,.35);--atas:rgba(233,241,252,.94)}
+html.dark body{background:radial-gradient(1200px 600px at 50% -200px,#0E3A78 0%,rgba(14,58,120,0) 60%),var(--bg);background-attachment:fixed}
+html.dark .card,html.dark .kartu,html.dark .lembar{background:linear-gradient(180deg,#10284F 0%,#0D2142 100%);border-color:#1E3D69}
+html.dark .btn{background:linear-gradient(135deg,#0B7BFF 0%,#4FB0FF 100%);box-shadow:0 6px 18px rgba(6,101,207,.35)}
+html.dark input,html.dark select,html.dark textarea{background:#0A1C39;border-color:#1E3D69}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Inter','Helvetica Neue',Arial,sans-serif;font-size:15px;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.atas{position:sticky;top:0;z-index:20;background:var(--atas);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+html.dark .atas{border-bottom-color:#C9DBF2}
+.bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:9px 16px}
+.merek{display:flex;align-items:center;gap:10px;border:0;background:none;padding:0;cursor:pointer;color:#002957;text-align:left;min-width:0}
+.merek svg{flex:none}.merek .garis{width:1.5px;height:30px;background:#002957;flex:none}
+.merek .nm{font-size:11.5px;font-weight:800;letter-spacing:.09em;line-height:1.25;color:#002957;white-space:nowrap}
+.sp{flex:1}
+.ib{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;height:38px;min-width:38px;padding:0 12px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+html.dark .atas .ib{background:#FFFFFF;color:#0B1B33;border-color:#C9DBF2}
+.wrap{max-width:1120px;margin:0 auto;padding:16px 16px calc(96px + env(safe-area-inset-bottom))}
+.hide{display:none!important}
+h1{font-size:28px;margin:6px 0 4px;font-weight:700;letter-spacing:-.6px;line-height:1.12}
+.sub{color:var(--muted);font-size:13.5px;margin:0;line-height:1.5}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid var(--line);margin-bottom:12px}
+.hello{background:linear-gradient(135deg,#002957 0%,#0A3F80 55%,#0665CF 100%)!important;color:#fff;border:0!important;position:relative;overflow:hidden;padding:20px 18px}
+.hello .sub{color:rgba(255,255,255,.86);position:relative}.hello h1{position:relative}
+.hello::before,.hello::after{content:'';position:absolute;background:rgba(255,255,255,.08);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hello::before{width:150px;height:170px;right:-40px;top:-50px}.hello::after{width:80px;height:92px;right:70px;bottom:-46px;background:rgba(255,255,255,.06)}
+.chip{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:4px 10px;margin-bottom:8px;position:relative}
+.angka{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px;position:relative}
+.angka button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:10px 12px;color:#fff;font:inherit;text-align:left;cursor:pointer}
+.angka b{display:block;font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.1}.angka span{font-size:12px;opacity:.88;font-weight:600}
+.tab{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:14px -16px 4px;padding:0 16px}.tab::-webkit-scrollbar{display:none}
+.pil{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 15px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;min-height:40px;white-space:nowrap}
+.pil.aktif{background:var(--pri);border-color:var(--pri);color:#fff}
+.pil.kecil{font-size:12.5px;padding:7px 12px;min-height:34px}
+.ttl{font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 4px 8px}
+input,select,textarea{width:100%;padding:12px 13px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:16px;outline:none;min-height:46px}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+label{display:block;font-size:12.5px;font-weight:700;margin:12px 0 5px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 18px;border:0;border-radius:14px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;background:var(--acc);color:#fff;min-height:46px;text-decoration:none}
+.btn.abu{background:var(--soft);color:var(--acc);box-shadow:none!important}html.dark .btn.abu{background:#12305A;color:#9CC7FF}
+.btn.merah{background:transparent;color:var(--out);border:1.5px solid var(--line);box-shadow:none!important}
+.btn.hijau{background:#0E9F6E!important;box-shadow:none!important}
+.btn:disabled{opacity:.5}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kartu{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;text-align:left;padding:0;font:inherit;color:inherit;transition:transform .12s}
+.kartu:active{transform:scale(.98)}
+.gbr{aspect-ratio:4/3;background:var(--soft);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.gbr img{width:100%;height:100%;object-fit:cover;display:block}
+.gbr .kos{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding:10px;letter-spacing:.02em}
+.isi{padding:10px 11px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.isi b{font-size:14.5px;line-height:1.25;letter-spacing:-.2px;overflow-wrap:anywhere}
+.isi small{font-size:12px;color:var(--muted);line-height:1.35}
+.st{display:inline-block;align-self:flex-start;font-size:12px;font-weight:800;border-radius:999px;padding:5px 11px;letter-spacing:.01em;border:1.5px solid transparent}
+.st.besar{font-size:14px;padding:7px 14px}
+.s-draf{background:#FFFFFF;color:#33445C;border-color:#C5CFDD}
+.s-tunggu{background:#FFD23F;color:#3D2E00}
+.s-revisi{background:#E0384F;color:#fff}
+.s-setuju{background:#12A150;color:#fff}
+.s-jadwal{background:#0665CF;color:#fff}
+.s-tayang{background:#0B6B3A;color:#fff}
+.s-arsip{background:#8793A6;color:#fff}
+.kosong{text-align:center;color:var(--muted);font-size:14px;padding:28px 16px}
+.brs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.kal{display:flex;gap:12px;align-items:center;padding:13px 14px}
+.kal .tg{flex:none;width:54px;text-align:center;background:var(--soft);border-radius:12px;padding:7px 0;color:var(--acc)}
+.kal .tg b{display:block;font-size:20px;line-height:1.1}.kal .tg span{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.kal .tx{flex:1;min-width:0}.kal .tx b{display:block;font-size:15.5px;line-height:1.25}.kal .tx small{color:var(--muted);font-size:12.5px}
+.agen{display:flex;gap:12px;align-items:flex-start;padding:14px}
+.agen .no{flex:none;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.agen b{font-size:16px}.agen p{margin:3px 0 8px;color:var(--muted);font-size:13.5px;line-height:1.45}
+.tirai{position:fixed;inset:0;z-index:40;background:rgba(3,12,28,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center}
+.lembar{background:var(--card);border:1px solid var(--line);width:100%;max-width:720px;max-height:92vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
+.lembar h2{font-size:22px;margin:4px 0 2px;letter-spacing:-.4px;line-height:1.2;overflow-wrap:anywhere}
+.tutup{float:right;border:0;background:var(--soft);color:var(--acc);width:38px;height:38px;border-radius:50%;font-size:20px;font-weight:700;cursor:pointer;line-height:1}
+.tampil{background:var(--soft);border-radius:14px;overflow:hidden;margin:12px 0;text-align:center}
+.tampil img{max-width:100%;max-height:60vh;display:block;margin:0 auto}
+.rinci{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin:12px 0}
+.rinci div small{display:block;font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.rinci div span{font-size:14.5px;font-weight:600;overflow-wrap:anywhere}
+.kutip{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 13px;font-size:14.5px;line-height:1.55}
+.dua{display:grid;grid-template-columns:minmax(0,1fr);gap:0 12px;clear:both}
+.pesan{font-size:13px;font-weight:700;color:var(--out);min-height:18px;margin-top:8px}
+.tambah{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:15;border-radius:999px;padding:14px 20px;box-shadow:0 10px 26px rgba(6,101,207,.4)}
+.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
+.hxMuat{position:fixed;inset:0;z-index:2147482000;display:flex;align-items:center;justify-content:center;background:rgba(245,247,251,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:opacity .25s}
+html.dark .hxMuat{background:rgba(228,232,239,.95)}
+.hxMuat.off{opacity:0;pointer-events:none}
+.hxMuat .in{text-align:center;padding:24px}
+.hxMuat svg{width:78px;height:88px;display:block;margin:0 auto 22px;animation:hxNapas 1.8s ease-in-out infinite}
+.hxMuat polygon{opacity:0;animation:hxSusun 1.8s ease-in-out infinite}
+.hxMuat .p2{animation-delay:.18s}.hxMuat .p3{animation-delay:.36s}.hxMuat .p4{animation-delay:.54s}
+@keyframes hxSusun{0%{opacity:0;transform:translateY(5px)}22%,72%{opacity:1;transform:none}92%,100%{opacity:0;transform:translateY(-3px)}}
+@keyframes hxNapas{0%,100%{transform:scale(.96)}50%{transform:scale(1.03)}}
+.hxMuat .t{font-size:21px;font-weight:700;letter-spacing:-.01em;color:#002957}
+.hxMuat .bar{display:block;width:180px;height:4px;border-radius:4px;background:rgba(0,41,87,.12);margin:18px auto 0;overflow:hidden;padding:0}
+.hxMuat .bar i{display:block;width:40%;height:100%;border-radius:4px;background:linear-gradient(90deg,#0665CF,#002957);animation:hxGeser 1.3s ease-in-out infinite}
+@keyframes hxGeser{0%{transform:translateX(-110%)}100%{transform:translateX(260%)}}
+@media (max-width:520px){.bar{gap:6px;padding:9px 12px}.merek{gap:7px}.merek svg{width:30px;height:34px}.merek .nm{font-size:9.5px;letter-spacing:.06em}.ib{padding:0 9px;font-size:12px}}
+@media (max-width:359px){.merek .nm{display:none}.merek .garis{display:none}}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:14px}.angka{grid-template-columns:repeat(4,1fr)}.dua{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.tirai{align-items:center}.lembar{border-radius:22px;padding:22px}}
+@media (min-width:1000px){.wrap{padding-top:24px}.grid{grid-template-columns:repeat(4,1fr)}.hello{padding:28px 28px}.hello h1{font-size:38px}h1{font-size:34px}.merek .nm{font-size:12.5px}.tab{margin-left:0;margin-right:0;padding:0;flex-wrap:wrap}.isi b{font-size:15.5px}}
+</style></head><body><div id="hxMuat" class="hxMuat"><div class="in"><svg viewBox="0 8 46 52"><polygon class="p1" fill="#002957" points="20,9 1,20.5 1,48.5 20,59.5 20,53.5 6.5,45.5 6.5,23.5 15,18.5 15,43.5 20,46.5 20,36 31,36 31,30 20,30"/><polygon class="p2" fill="#0665CF" points="25,9 31,12.5 31,18 25,15"/><polygon class="p3" fill="#002957" points="25,15 31,18 31,25 25,25"/><polygon class="p4" fill="#0665CF" points="36,15.5 45,20.5 45,48.5 25.5,59.5 25,59.2 25,36 31,36 31,50.5 39.5,45.5 39.5,23.5 36,21.5"/></svg><div class="t" id="hxMuatT">Menyiapkan Marketing…</div><div class="bar"><i></i></div></div></div>
+<div class="atas"><div class="bar"><button class="merek" id="bMerek" type="button" aria-label="Beranda Marketing"><svg viewBox="0 8 46 52" width="34" height="38" role="img" aria-label="Logo PT. Hexa Tunggal Jaya"><polygon class="p1" fill="#002957" points="20,9 1,20.5 1,48.5 20,59.5 20,53.5 6.5,45.5 6.5,23.5 15,18.5 15,43.5 20,46.5 20,36 31,36 31,30 20,30"/><polygon class="p2" fill="#0665CF" points="25,9 31,12.5 31,18 25,15"/><polygon class="p3" fill="#002957" points="25,15 31,18 31,25 25,25"/><polygon class="p4" fill="#0665CF" points="36,15.5 45,20.5 45,48.5 25.5,59.5 25,59.2 25,36 31,36 31,50.5 39.5,45.5 39.5,23.5 36,21.5"/></svg><span class="garis"></span><span class="nm">PT. HEXA<br>TUNGGAL JAYA</span></button><div class="sp"></div>
+<button class="ib" id="bTema" type="button" aria-label="Ganti Tema">🌙</button><button class="ib" id="bPindah" type="button">Pindah Modul</button><button class="ib" id="bKeluar" type="button">Keluar</button></div></div>
+<div class="wrap hide" id="vMasuk" style="max-width:560px"><div class="card hello" style="margin-top:18px"><div class="chip">Modul Marketing</div><h1>Masuk Lewat Aplikasi Hexa Tunggal Jaya</h1><p class="sub" id="masukTeks">Modul Ini Dibuka Dari Halaman Pilih Divisi, Pakai Nama Dan PIN Yang Sama.</p></div><a class="btn" style="width:100%" href="https://sistem.hexatunggaljaya.co.id/" id="bPortal">Buka Hexa Tunggal Jaya</a><div class="foot">PT. Hexa Tunggal Jaya • Sistem Internal</div></div>
+<div class="wrap hide" id="vApp">
+ <div class="card hello"><div class="chip" id="peran">Marketing</div><h1 id="hai">Marketing</h1><p class="sub" id="sambut">Semua Materi Marketing PT. Hexa Tunggal Jaya Di Satu Tempat.</p><div class="angka" id="angka"></div></div>
+ <div class="tab" id="tabUtama"></div>
+ <div id="vMateri">
+  <input id="cari" type="search" placeholder="Cari Judul, Kampanye, Atau Teks" autocomplete="off" style="margin-top:10px">
+  <div class="ttl">Kategori</div><div class="tab" id="tabKategori" style="margin-top:0"></div><div class="ttl">Status</div><div class="tab" id="tabStatus" style="margin-top:0"></div>
+  <div class="ttl" id="ringkas"></div><div class="grid" id="grid"></div>
+ </div>
+ <div id="vKalender" class="hide"><div class="ttl">Tanggal Merah 5 Bulan Ke Depan</div><div id="kal"></div></div>
+ <div id="vAgen" class="hide"><div class="ttl">Tim Agen Marketing Di Kantor Virtual</div><div id="agen"></div></div>
+ <div class="foot">PT. Hexa Tunggal Jaya • Sistem Internal</div>
+</div>
+<button class="btn tambah" id="bTambah" type="button">＋ Tambah Materi</button>
+<div class="tirai hide" id="tirai"><div class="lembar" id="lembar"></div></div>
+<script>function jamWib(){return Number(new Intl.DateTimeFormat('en-GB',{hour:'2-digit',hour12:false,timeZone:'Asia/Jakarta'}).format(new Date()))%24}
+function ambil(k){try{return localStorage.getItem(k)}catch(e){return null}}function simpanLokal(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function aturTema(){var p=ambil('hexa_tema');var g=p?p==='gelap':(jamWib()>=18||jamWib()<7);document.documentElement.classList.toggle('dark',g);var b=document.getElementById('bTema');if(b)b.textContent=g?'☀️':'🌙';var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',g?'#E9F1FC':'#F2F5FA')}
+aturTema();setInterval(aturTema,60000);
+function muat(t){var m=document.getElementById('hxMuat');if(!m)return;if(t===false){m.classList.add('off');return}document.getElementById('hxMuatT').textContent=t;m.classList.remove('off')}
+
+var D={materi:[],kalender:[],agen:[],saya:{},pilihan:{kategori:[],saluran:[],status:[],semuaStatus:[]}},TAB='WhatsApp',KAT='Semua',ST='Semua',Q='';
+var API='https://bot-whatsapp.solitary-cherry-e5b5.workers.dev/marketing/',TOK=ambil('mkt_tok')||'',GBR={};
+var JENIS=['WhatsApp','Email','Banner Website','Cetak & Lainnya'];
+function jenisMateri(m){return m.saluran==='WhatsApp'?'WhatsApp':m.saluran==='Email'?'Email':m.saluran==='Website'?'Banner Website':'Cetak & Lainnya'}
+function tampilMasuk(teks){TOK='';try{localStorage.removeItem('mkt_tok')}catch(e){}$('vApp').classList.add('hide');$('bTambah').classList.add('hide');$('bKeluar').classList.add('hide');$('vMasuk').classList.remove('hide');if(teks)$('masukTeks').textContent=teks;muat(false)}
+function ambilBerkas(id,jenis,versi){var k=id+'|'+jenis+'|'+(versi||0);if(!GBR[k])GBR[k]=fetch(API+'berkas?id='+id+'&jenis='+jenis,{headers:{authorization:'Bearer '+TOK}}).then(function(x){if(!x.ok)throw new Error('Gagal');return x.blob()});return GBR[k]}
+function pasangGambar(im,id,jenis,versi){ambilBerkas(id,jenis,versi).then(function(b){im.src=URL.createObjectURL(b)}).catch(function(){im.alt='Gambar Tidak Bisa Dimuat'})}
+function unduh(m,tombol){var asal=tombol.textContent;tombol.textContent='Mengunduh…';ambilBerkas(m.id,'asli',m.berkas_versi).then(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=m.berkas_nama||'materi';document.body.appendChild(a);a.click();a.remove();tombol.textContent=asal}).catch(function(){tombol.textContent='Gagal Mengunduh'})}
+var BLN=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+var KLS={'Draf':'s-draf','Menunggu Persetujuan':'s-tunggu','Perlu Revisi':'s-revisi','Disetujui':'s-setuju','Terjadwal':'s-jadwal','Sudah Tayang':'s-tayang','Arsip':'s-arsip'};
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function tgl(t){var p=String(t||'').split('-');return p.length===3?(+p[2])+' '+BLN[+p[1]-1]+' '+p[0]:''}
+function waktu(){var j=jamWib();return j<4?'Selamat Malam':j<11?'Selamat Pagi':j<15?'Selamat Siang':j<18?'Selamat Sore':'Selamat Malam'}
+function judulKata(s){return String(s).replace(/[^\s@]+/g,function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()})}
+function api(r,b,mentah){var o={method:'POST',headers:{authorization:'Bearer '+TOK}};if(mentah){o.headers['content-type']=mentah.type;o.body=mentah}else{o.headers['content-type']='application/json';o.body=JSON.stringify(b||{})}
+ return fetch(API+'api/'+r,o).then(function(x){if(x.status===401){tampilMasuk('Sesi Sudah Habis. Buka Lagi Dari Halaman Pilih Divisi.');throw new Error('Sesi Habis')}return x.json()})}
+function segarkan(teks){muat(teks||'Memuat Materi…');return api('muat').then(function(d){muat(false);if(!d.ok)return;D=d;$('vMasuk').classList.add('hide');$('vApp').classList.remove('hide');$('bKeluar').classList.remove('hide');gambar()}).catch(function(){muat(false)})}
+function tabBaris(w,daftar,aktif,pilih,kecil){w.textContent='';daftar.forEach(function(d){var b=el('button','pil'+(kecil?' kecil':'')+(d===aktif?' aktif':''),d);b.type='button';b.onclick=function(){pilih(d)};w.appendChild(b)})}
+function cocok(m){if(jenisMateri(m)!==TAB)return false;if(KAT!=='Semua'&&m.kategori!==KAT)return false;if(ST==='Semua'){if(m.status==='Arsip')return false}else if(m.status!==ST)return false;
+ if(Q){var s=(m.judul+' '+(m.kampanye||'')+' '+(m.teks||'')+' '+(m.saluran||'')).toLowerCase();if(s.indexOf(Q)<0)return false}return true}
+function hitung(s){return D.materi.filter(function(m){return m.status===s}).length}
+function gambar(){
+ var adm=D.saya.peran==='ADMIN',nm=judulKata(String(D.saya.nama||'').split(/[\s@]/)[0]);
+ $('peran').textContent='Marketing • '+(adm?'Admin':'Staf');$('hai').textContent='Halo, '+nm+' 👋';
+ $('sambut').textContent=waktu()+'! '+(adm?'Materi Baru Dipakai Setelah Bapak Setujui.':'Buat Draf, Lalu Ajukan Ke Pak Julius Untuk Disetujui.');
+ var a=$('angka');a.textContent='';[['Total Materi',D.materi.filter(function(m){return m.status!=='Arsip'}).length,'Semua'],['Menunggu Persetujuan',hitung('Menunggu Persetujuan'),'Menunggu Persetujuan'],['Disetujui',hitung('Disetujui')+hitung('Terjadwal'),'Disetujui'],['Sudah Tayang',hitung('Sudah Tayang'),'Sudah Tayang']].forEach(function(x){
+  var b=el('button');b.type='button';b.appendChild(el('b',null,String(x[1])));b.appendChild(el('span',null,x[0]));b.onclick=function(){if(JENIS.indexOf(TAB)<0)TAB='WhatsApp';ST=x[2];KAT='Semua';gambar()};a.appendChild(b)});
+ var w=$('tabUtama');w.textContent='';JENIS.concat(['Kalender Kampanye','Tim Agen']).forEach(function(t){var n=JENIS.indexOf(t)>=0?D.materi.filter(function(m){return m.status!=='Arsip'&&jenisMateri(m)===t}).length:null;var b=el('button','pil'+(t===TAB?' aktif':''),t+(n!=null?' ('+n+')':''));b.type='button';b.onclick=function(){TAB=t;gambar()};w.appendChild(b)});var diMateri=JENIS.indexOf(TAB)>=0;
+ $('vMateri').classList.toggle('hide',!diMateri);$('vKalender').classList.toggle('hide',TAB!=='Kalender Kampanye');$('vAgen').classList.toggle('hide',TAB!=='Tim Agen');$('bTambah').classList.toggle('hide',!diMateri);
+ tabBaris($('tabKategori'),['Semua'].concat(D.pilihan.kategori),KAT,function(k){KAT=k;gambar()},true);
+ tabBaris($('tabStatus'),['Semua'].concat(D.pilihan.semuaStatus),ST,function(s){ST=s;gambar()},true);
+ var g=$('grid');g.textContent='';var daftar=D.materi.filter(cocok);
+ $('ringkas').textContent=daftar.length+' Materi '+TAB+(KAT!=='Semua'?' • '+KAT:'')+(ST!=='Semua'?' • '+ST:'');
+ if(!daftar.length){var k=el('div','card kosong','Belum Ada Materi '+TAB+' Di Sini. Tekan Tambah Materi Untuk Menambah.');k.style.gridColumn='1/-1';g.appendChild(k)}
+ daftar.forEach(function(m){var c=el('button','kartu');c.type='button';var gb=el('div','gbr');
+  if(m.ada_pratinjau||(m.berkas_mime&&m.berkas_mime.indexOf('image/')===0)){var im=el('img');im.loading='lazy';im.alt=m.judul;pasangGambar(im,m.id,m.ada_pratinjau?'pratinjau':'asli',m.berkas_versi);gb.appendChild(im)}
+  else gb.appendChild(el('div','kos',m.berkas_mime==='application/pdf'?'Berkas PDF':m.tautan?'Tautan Desain':'Belum Ada Gambar'));
+  c.appendChild(gb);var i=el('div','isi');i.appendChild(el('span','st '+(KLS[m.status]||'s-draf'),m.status));i.appendChild(el('b',null,m.judul));
+  i.appendChild(el('small',null,[m.saluran,m.ukuran,tgl(m.tanggal)].filter(Boolean).join(' • ')||m.kategori));c.appendChild(i);c.onclick=function(){rinci(m.id)};g.appendChild(c)});
+ var kl=$('kal');kl.textContent='';if(!D.kalender.length)kl.appendChild(el('div','card kosong','Belum Ada Tanggal Merah Yang Tercatat.'));
+ D.kalender.forEach(function(h){var c=el('div','card kal');var p=h.tanggal.split('-');var t=el('div','tg');t.appendChild(el('b',null,String(+p[2])));t.appendChild(el('span',null,BLN[+p[1]-1]));c.appendChild(t);
+  var x=el('div','tx');x.appendChild(el('b',null,judulKata(h.nama)));x.appendChild(el('small',null,h.teks));c.appendChild(x);
+  c.appendChild(el('span','st '+(h.materi?'s-setuju':'s-draf'),h.materi?h.materi+' Materi':'Belum Ada Materi'));kl.appendChild(c)});
+ var ag=$('agen');ag.textContent='';D.agen.forEach(function(x){var c=el('div','card agen');c.appendChild(el('div','no',String(x.no)));var d=el('div');d.appendChild(el('b',null,'Agen '+x.no+' • '+x.nama));d.appendChild(el('p',null,x.tugas));
+  d.appendChild(el('span','st '+(x.status==='Aktif'?'s-setuju':'s-draf'),x.status+(x.jadwal?' • '+x.jadwal:'')));c.appendChild(d);ag.appendChild(c)});
+}
+function buka(){$('tirai').classList.remove('hide');document.body.style.overflow='hidden';$('lembar').scrollTop=0}
+function tutup(){$('tirai').classList.add('hide');document.body.style.overflow='';$('lembar').textContent=''}
+function kepalaLembar(L,judul){var t=el('button','tutup','×');t.type='button';t.setAttribute('aria-label','Tutup');t.onclick=tutup;L.appendChild(t);if(judul)L.appendChild(el('h2',null,judul))}
+function butir(w,label,isi){if(!isi)return;var d=el('div');d.appendChild(el('small',null,label));d.appendChild(el('span',null,isi));w.appendChild(d)}
+function ubahStatus(id,status){muat('Menyimpan Status…');api('status',{id:id,status:status}).then(function(r){if(!r.ok){muat(false);var p=$('rPesan');if(p)p.textContent=r.galat||'Gagal Menyimpan';return}tutup();segarkan('Memperbarui…')})}
+function rinci(id){var m=D.materi.filter(function(x){return x.id===id})[0];if(!m)return;var adm=D.saya.peran==='ADMIN',L=$('lembar');L.textContent='';kepalaLembar(L);
+ L.appendChild(el('span','st besar '+(KLS[m.status]||'s-draf'),m.status));L.appendChild(el('h2',null,m.judul));L.appendChild(el('p','sub',[m.kategori,m.kampanye].filter(Boolean).join(' • ')));
+ var gambarAda=m.berkas_mime&&m.berkas_mime.indexOf('image/')===0;
+ if(gambarAda){var t=el('div','tampil');var im=el('img');im.alt=m.judul;pasangGambar(im,m.id,'asli',m.berkas_versi);t.appendChild(im);L.appendChild(t)}
+ var b1=el('div','brs');
+ if(m.berkas_mime){var u=el('button','btn','Unduh '+(gambarAda?'Gambar':'Berkas'));u.type='button';u.onclick=function(){unduh(m,u)};b1.appendChild(u)}
+ if(m.tautan){var tt=el('a','btn abu','Buka Tautan Desain');tt.href=m.tautan;tt.target='_blank';tt.rel='noopener noreferrer';b1.appendChild(tt)}
+ if(b1.childNodes.length)L.appendChild(b1);
+ var r=el('div','rinci');butir(r,'Saluran',m.saluran);butir(r,'Ukuran',m.ukuran);butir(r,'Tanggal Tayang',tgl(m.tanggal));butir(r,'Dibuat Oleh',m.pembuat);butir(r,'Disetujui Oleh',m.disetujui_oleh);butir(r,'Berkas',m.berkas_nama?m.berkas_nama+' ('+Math.round(m.berkas_ukuran/1024)+' KB)':'');L.appendChild(r);
+ if(m.teks){L.appendChild(el('label',null,'Teks Pesan'));L.appendChild(el('div','kutip',m.teks));var s=el('button','btn abu','Salin Teks');s.type='button';s.style.marginTop='8px';s.onclick=function(){if(navigator.clipboard)navigator.clipboard.writeText(m.teks).then(function(){s.textContent='Teks Tersalin ✓'})};L.appendChild(s)}
+ if(m.catatan){L.appendChild(el('label',null,'Catatan'));L.appendChild(el('div','kutip',m.catatan))}
+ var bolehUbah=adm||['Draf','Menunggu Persetujuan','Perlu Revisi'].indexOf(m.status)>=0;
+ L.appendChild(el('label',null,adm?'Keputusan':'Tindakan'));var b2=el('div','brs');
+ function tb(teks,kls,fn){var b=el('button','btn '+kls,teks);b.type='button';b.onclick=fn;b2.appendChild(b);return b}
+ if(adm){if(m.status!=='Disetujui')tb('Setujui','hijau',function(){ubahStatus(m.id,'Disetujui')});if(m.status!=='Perlu Revisi'&&m.status!=='Sudah Tayang')tb('Minta Revisi','merah',function(){ubahStatus(m.id,'Perlu Revisi')});
+  if(m.status==='Disetujui'||m.status==='Terjadwal')tb('Tandai Sudah Tayang','abu',function(){ubahStatus(m.id,'Sudah Tayang')});if(m.status==='Disetujui')tb('Tandai Terjadwal','abu',function(){ubahStatus(m.id,'Terjadwal')});
+  if(m.status!=='Arsip')tb('Arsipkan','abu',function(){ubahStatus(m.id,'Arsip')});else tb('Keluarkan Dari Arsip','abu',function(){ubahStatus(m.id,'Draf')})}
+ else if(bolehUbah&&m.status!=='Menunggu Persetujuan')tb('Ajukan Ke Pak Julius','',function(){ubahStatus(m.id,'Menunggu Persetujuan')});
+ if(bolehUbah)tb('Ubah Materi','abu',function(){formulir(m)});
+ if(adm){var h=tb('Hapus','merah',function(){if(h.dataset.yakin){muat('Menghapus…');api('hapus',{id:m.id}).then(function(){tutup();segarkan('Memperbarui…')})}else{h.dataset.yakin='1';h.textContent='Yakin Hapus? Tekan Sekali Lagi'}})}
+ L.appendChild(b2);L.appendChild(el('div','pesan','')).id='rPesan';buka()}
+function pilihan(id,daftar,nilai,kosong){var s=el('select');s.id=id;if(kosong){var o=el('option',null,kosong);o.value='';s.appendChild(o)}daftar.forEach(function(d){var o=el('option',null,d);o.value=d;if(d===nilai)o.selected=true;s.appendChild(o)});return s}
+function kolom(w,label,node){var d=el('div');d.appendChild(el('label',null,label));d.appendChild(node);w.appendChild(d);return node}
+function masukan(id,nilai,maks,jenis,ph){var i=el('input');i.id=id;i.value=nilai||'';if(maks)i.maxLength=maks;if(jenis)i.type=jenis;if(ph)i.placeholder=ph;return i}
+function kecilkan(file){return new Promise(function(ok){if(!file||file.type.indexOf('image/')!==0)return ok(null);var u=URL.createObjectURL(file),im=new Image();
+ im.onload=function(){var s=Math.min(1,640/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(function(b){ok(b)},'image/jpeg',.82)};
+ im.onerror=function(){URL.revokeObjectURL(u);ok(null)};im.src=u})}
+function unggahBerkas(id,file){return api('unggah?id='+id+'&jenis=asli&nama='+encodeURIComponent(file.name),null,file).then(function(r){if(!r.ok)throw new Error(r.galat||'Gagal Mengunggah');return kecilkan(file)}).then(function(b){if(b)return api('unggah?id='+id+'&jenis=pratinjau&nama=pratinjau.jpg',null,b)})}
+function formulir(m){m=m||{};var L=$('lembar');L.textContent='';kepalaLembar(L,m.id?'Ubah Materi':'Tambah Materi');var f=el('div','dua');
+ kolom(f,'Judul',masukan('fJudul',m.judul,120,null,'Contoh: WhatsApp – Imlek 2027'));kolom(f,'Kategori',pilihan('fKategori',D.pilihan.kategori,m.kategori||(KAT!=='Semua'?KAT:''),'Pilih Kategori'));
+ kolom(f,'Kampanye',masukan('fKampanye',m.kampanye,100,null,'Contoh: Natal & Tahun Baru 2027'));kolom(f,'Saluran',pilihan('fSaluran',D.pilihan.saluran,m.saluran||(TAB==='WhatsApp'?'WhatsApp':TAB==='Email'?'Email':TAB==='Banner Website'?'Website':''),'Pilih Saluran'));
+ kolom(f,'Tanggal Tayang',masukan('fTanggal',m.tanggal,10,'date'));kolom(f,'Ukuran',masukan('fUkuran',m.ukuran,30,null,'Contoh: 1080 × 1350'));L.appendChild(f);
+ var t=el('textarea');t.id='fTeks';t.maxLength=4000;t.value=m.teks||'';t.placeholder='Teks Yang Dikirim Bersama Materi (Caption, Isi Email, Atau Pesan WhatsApp)';kolom(L,'Teks Pesan',t);
+ var c=el('textarea');c.id='fCatatan';c.maxLength=1000;c.value=m.catatan||'';c.style.minHeight='76px';kolom(L,'Catatan',c);
+ kolom(L,'Tautan Desain (Opsional)',masukan('fTautan',m.tautan,400,'url','https://'));
+ var fi=el('input');fi.id='fBerkas';fi.type='file';fi.accept='image/png,image/jpeg,image/webp,application/pdf';kolom(L,m.berkas_nama?'Ganti Gambar / Berkas (Maks 1,9 MB)':'Gambar / Berkas (PNG, JPG, WEBP, PDF • Maks 1,9 MB)',fi);
+ var b=el('div','brs');b.style.marginTop='16px';var s=el('button','btn','Simpan');s.type='button';var x=el('button','btn abu','Batal');x.type='button';x.onclick=tutup;b.appendChild(s);b.appendChild(x);L.appendChild(b);var p=el('div','pesan','');L.appendChild(p);
+ s.onclick=function(){var file=fi.files&&fi.files[0];if(file&&file.size>1900000){p.textContent='File Terlalu Besar. Maksimal 1,9 MB.';return}
+  var d={id:m.id||null,judul:$('fJudul').value,kategori:$('fKategori').value,kampanye:$('fKampanye').value,saluran:$('fSaluran').value,tanggal:$('fTanggal').value,ukuran:$('fUkuran').value,teks:$('fTeks').value,catatan:$('fCatatan').value,tautan:$('fTautan').value};
+  s.disabled=true;p.textContent='';muat('Menyimpan Materi…');
+  api('simpan',d).then(function(r){if(!r.ok)throw new Error(r.galat||'Gagal Menyimpan');if(file){muat('Mengunggah Gambar…');return unggahBerkas(r.id,file)}}).then(function(){tutup();return segarkan('Memperbarui…')}).catch(function(e){muat(false);s.disabled=false;p.textContent=e.message||'Gagal Menyimpan'})};
+ buka()}
+$('bTema').onclick=function(){simpanLokal('hexa_tema',document.documentElement.classList.contains('dark')?'terang':'gelap');aturTema()};
+$('bMerek').onclick=function(){TAB='WhatsApp';KAT='Semua';ST='Semua';Q='';$('cari').value='';gambar();window.scrollTo(0,0)};
+$('bPortal').onclick=function(){muat('Membuka Hexa Tunggal Jaya…')};
+$('bKeluar').onclick=function(){muat('Keluar…');api('keluar').catch(function(){}).then(function(){tampilMasuk('Anda Sudah Keluar Dari Modul Marketing.')})};
+$('bTambah').onclick=function(){formulir()};
+$('tirai').onclick=function(e){if(e.target===$('tirai'))tutup()};
+$('cari').oninput=function(){Q=this.value.trim().toLowerCase();var a=document.activeElement;gambar();if(a&&a.id==='cari')$('cari').focus()};
+window.addEventListener('pageshow',function(e){if(e.persisted)muat(false)});
+(function(){var q=new URLSearchParams(location.search),sso=q.get('sso'),h=location.hash.match(/^#t=([0-9a-f]{64})$/);
+ try{history.replaceState(null,'',location.pathname)}catch(e){}
+ function mulai(){if(!TOK)return tampilMasuk();simpanLokal('mkt_tok',TOK);segarkan('Menyiapkan Marketing…')}
+ if(h){TOK=h[1];mulai()}
+ else if(sso){muat('Memeriksa Tiket Masuk…');fetch(API+'api/masuk',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({tiket:sso})}).then(function(x){return x.json()}).then(function(r){if(r.ok&&r.token){TOK=r.token;mulai()}else if(TOK)mulai();else tampilMasuk('Tiket Masuk Sudah Tidak Berlaku. Buka Lagi Dari Halaman Pilih Divisi.')}).catch(function(){if(TOK)mulai();else tampilMasuk('Server Belum Bisa Dihubungi. Coba Lagi Sebentar.')})}
+ else mulai()})();
+</script>
+<script src="/pindah.js?v=3" data-ini="marketing" data-tombol="bPindah" defer></script>
+</body></html>
