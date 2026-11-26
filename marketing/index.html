@@ -107,6 +107,7 @@ html.dark .hxMuat{background:rgba(228,232,239,.95)}
 <div class="atas"><div class="bar"><button class="merek" id="bMerek" type="button" aria-label="Beranda Marketing"><svg viewBox="0 8 46 52" width="34" height="38" role="img" aria-label="Logo PT. Hexa Tunggal Jaya"><polygon class="p1" fill="#002957" points="20,9 1,20.5 1,48.5 20,59.5 20,53.5 6.5,45.5 6.5,23.5 15,18.5 15,43.5 20,46.5 20,36 31,36 31,30 20,30"/><polygon class="p2" fill="#0665CF" points="25,9 31,12.5 31,18 25,15"/><polygon class="p3" fill="#002957" points="25,15 31,18 31,25 25,25"/><polygon class="p4" fill="#0665CF" points="36,15.5 45,20.5 45,48.5 25.5,59.5 25,59.2 25,36 31,36 31,50.5 39.5,45.5 39.5,23.5 36,21.5"/></svg><span class="garis"></span><span class="nm">PT. HEXA<br>TUNGGAL JAYA</span></button><div class="sp"></div>
 <button class="ib" id="bTema" type="button" aria-label="Ganti Tema">🌙</button><button class="ib" id="bPindah" type="button">Pindah Modul</button><button class="ib" id="bKeluar" type="button">Keluar</button></div></div>
 <div class="wrap hide" id="vMasuk" style="max-width:560px"><div class="card hello" style="margin-top:18px"><div class="chip">Modul Marketing</div><h1>Masuk Lewat Aplikasi Hexa Tunggal Jaya</h1><p class="sub" id="masukTeks">Modul Ini Dibuka Dari Halaman Pilih Divisi, Pakai Nama Dan PIN Yang Sama.</p></div><a class="btn" style="width:100%" href="https://sistem.hexatunggaljaya.co.id/" id="bPortal">Buka Hexa Tunggal Jaya</a><div class="foot">PT. Hexa Tunggal Jaya • Sistem Internal</div></div>
+<div class="wrap hide" id="vGalat" style="max-width:560px"><div class="card" style="margin-top:18px"><h1 style="font-size:24px">Marketing Belum Bisa Dimuat</h1><p class="sub">Halaman Sudah Terbuka, Tetapi Data Dari Server Belum Sampai Ke Perangkat Ini.</p><p class="sub" id="galatRinci" style="margin-top:8px"></p></div><button class="btn" style="width:100%" id="bUlang" type="button">Coba Lagi</button></div>
 <div class="wrap hide" id="vApp">
  <div class="card hello"><div class="chip" id="peran">Marketing</div><h1 id="hai">Marketing</h1><p class="sub" id="sambut">Semua Materi Marketing PT. Hexa Tunggal Jaya Di Satu Tempat.</p><div class="angka" id="angka"></div></div>
  <div class="tab" id="tabUtama"></div>
@@ -131,7 +132,8 @@ var D={materi:[],kalender:[],agen:[],saya:{},pilihan:{kategori:[],saluran:[],sta
 var API='https://bot-whatsapp.solitary-cherry-e5b5.workers.dev/marketing/',TOK=ambil('mkt_tok')||'',GBR={};
 var JENIS=['WhatsApp','Email','Banner Website','Cetak & Lainnya'];
 function jenisMateri(m){return m.saluran==='WhatsApp'?'WhatsApp':m.saluran==='Email'?'Email':m.saluran==='Website'?'Banner Website':'Cetak & Lainnya'}
-function tampilMasuk(teks){TOK='';try{localStorage.removeItem('mkt_tok')}catch(e){}$('vApp').classList.add('hide');$('bTambah').classList.add('hide');$('bKeluar').classList.add('hide');$('vMasuk').classList.remove('hide');if(teks)$('masukTeks').textContent=teks;muat(false)}
+function tampilMasuk(teks){TOK='';try{localStorage.removeItem('mkt_tok')}catch(e){}$('vApp').classList.add('hide');$('bTambah').classList.add('hide');$('bKeluar').classList.add('hide');$('vGalat').classList.add('hide');$('vMasuk').classList.remove('hide');if(teks)$('masukTeks').textContent=teks;muat(false)}
+function tampilGalat(rinci){$('vApp').classList.add('hide');$('vMasuk').classList.add('hide');$('bTambah').classList.add('hide');$('vGalat').classList.remove('hide');$('galatRinci').textContent='Rincian: '+rinci+' • '+new Date().toLocaleTimeString('id-ID')}
 function ambilBerkas(id,jenis,versi){var k=id+'|'+jenis+'|'+(versi||0);if(!GBR[k])GBR[k]=fetch(API+'berkas?id='+id+'&jenis='+jenis,{headers:{authorization:'Bearer '+TOK}}).then(function(x){if(!x.ok)throw new Error('Gagal');return x.blob()});return GBR[k]}
 function pasangGambar(im,id,jenis,versi){ambilBerkas(id,jenis,versi).then(function(b){im.src=URL.createObjectURL(b)}).catch(function(){im.alt='Gambar Tidak Bisa Dimuat'})}
 function unduh(m,tombol){var asal=tombol.textContent;tombol.textContent='Mengunduh…';ambilBerkas(m.id,'asli',m.berkas_versi).then(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=m.berkas_nama||'materi';document.body.appendChild(a);a.click();a.remove();tombol.textContent=asal}).catch(function(){tombol.textContent='Gagal Mengunduh'})}
@@ -144,7 +146,7 @@ function waktu(){var j=jamWib();return j<4?'Selamat Malam':j<11?'Selamat Pagi':j
 function judulKata(s){return String(s).replace(/[^\s@]+/g,function(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()})}
 function api(r,b,mentah){var o={method:'POST',headers:{authorization:'Bearer '+TOK}};if(mentah){o.headers['content-type']=mentah.type;o.body=mentah}else{o.headers['content-type']='application/json';o.body=JSON.stringify(b||{})}
  return fetch(API+'api/'+r,o).then(function(x){if(x.status===401){tampilMasuk('Sesi Sudah Habis. Buka Lagi Dari Halaman Pilih Divisi.');throw new Error('Sesi Habis')}return x.json()})}
-function segarkan(teks){muat(teks||'Memuat Materi…');return api('muat').then(function(d){muat(false);if(!d.ok)return;D=d;$('vMasuk').classList.add('hide');$('vApp').classList.remove('hide');$('bKeluar').classList.remove('hide');gambar()}).catch(function(){muat(false)})}
+function segarkan(teks){muat(teks||'Memuat Materi…');return api('muat').then(function(d){muat(false);if(!d.ok){tampilGalat(d.galat||'Data Tidak Bisa Dimuat');return}D=d;$('vGalat').classList.add('hide');$('vMasuk').classList.add('hide');$('vApp').classList.remove('hide');$('bKeluar').classList.remove('hide');gambar()}).catch(function(e){muat(false);if(TOK)tampilGalat((e&&e.message)||'Tidak Diketahui')})}
 function tabBaris(w,daftar,aktif,pilih,kecil){w.textContent='';daftar.forEach(function(d){var b=el('button','pil'+(kecil?' kecil':'')+(d===aktif?' aktif':''),d);b.type='button';b.onclick=function(){pilih(d)};w.appendChild(b)})}
 function cocok(m){if(jenisMateri(m)!==TAB)return false;if(KAT!=='Semua'&&m.kategori!==KAT)return false;if(ST==='Semua'){if(m.status==='Arsip')return false}else if(m.status!==ST)return false;
  if(Q){var s=(m.judul+' '+(m.kampanye||'')+' '+(m.teks||'')+' '+(m.saluran||'')).toLowerCase();if(s.indexOf(Q)<0)return false}return true}
@@ -226,15 +228,19 @@ $('bMerek').onclick=function(){TAB='WhatsApp';KAT='Semua';ST='Semua';Q='';$('car
 $('bPortal').onclick=function(){muat('Membuka Hexa Tunggal Jaya…')};
 $('bKeluar').onclick=function(){muat('Keluar…');api('keluar').catch(function(){}).then(function(){tampilMasuk('Anda Sudah Keluar Dari Modul Marketing.')})};
 $('bTambah').onclick=function(){formulir()};
+$('bUlang').onclick=function(){segarkan('Mencoba Lagi…')};
 $('tirai').onclick=function(e){if(e.target===$('tirai'))tutup()};
 $('cari').oninput=function(){Q=this.value.trim().toLowerCase();var a=document.activeElement;gambar();if(a&&a.id==='cari')$('cari').focus()};
 window.addEventListener('pageshow',function(e){if(e.persisted)muat(false)});
-(function(){var q=new URLSearchParams(location.search),sso=q.get('sso'),h=location.hash.match(/^#t=([0-9a-f]{64})$/);
+(function(){var sso=null,h=null,gagal=false;
+ try{sso=(location.search.match(/[?&]sso=([0-9a-fA-F-]{36})/)||[])[1]||null;h=(location.hash.match(/^#t=([0-9a-f]{64})$/)||[])[1]||null;gagal=location.hash.indexOf('#gagal')===0}catch(e){}
+ // Tiket portal diperiksa di pintu masuk server lewat navigasi biasa, lalu kembali ke halaman ini membawa sesi
+ if(sso){muat('Memeriksa Tiket Masuk…');location.replace(API.replace(/\/$/,'')+'?sso='+encodeURIComponent(sso));return}
  try{history.replaceState(null,'',location.pathname)}catch(e){}
- function mulai(){if(!TOK)return tampilMasuk();simpanLokal('mkt_tok',TOK);segarkan('Menyiapkan Marketing…')}
- if(h){TOK=h[1];mulai()}
- else if(sso){muat('Memeriksa Tiket Masuk…');fetch(API+'api/masuk',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({tiket:sso})}).then(function(x){return x.json()}).then(function(r){if(r.ok&&r.token){TOK=r.token;mulai()}else if(TOK)mulai();else tampilMasuk('Tiket Masuk Sudah Tidak Berlaku. Buka Lagi Dari Halaman Pilih Divisi.')}).catch(function(){if(TOK)mulai();else tampilMasuk('Server Belum Bisa Dihubungi. Coba Lagi Sebentar.')})}
- else mulai()})();
+ if(h){TOK=h;simpanLokal('mkt_tok',TOK)}
+ if(gagal&&!h){if(TOK)return segarkan('Menyiapkan Marketing…');return tampilMasuk('Tiket Masuk Sudah Tidak Berlaku. Buka Lagi Dari Halaman Pilih Divisi.')}
+ if(!TOK)return tampilMasuk();
+ segarkan('Menyiapkan Marketing…')})();
 </script>
 <script src="/pindah.js?v=3" data-ini="marketing" data-tombol="bPindah" defer></script>
 </body></html>
