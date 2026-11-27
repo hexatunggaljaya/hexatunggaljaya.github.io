@@ -120,12 +120,14 @@ function ambil(k){try{return localStorage.getItem(k)}catch(e){return null}}funct
 function $(i){return document.getElementById(i)}
 function muat(t){var m=$('hxMuat');if(t===false){m.classList.add('off');return}$('hxMuatT').textContent=t;m.classList.remove('off')}
 (function(){var p=ambil('hexa_tema');var g=p?p==='gelap':(jamWib()>=18||jamWib()<7);document.documentElement.classList.toggle('dark',g)})();
-var TOK=ambil('mkt_tok')||'',SIAP=false,B=null;
+var TOK=ambil('mkt_tok')||'',SIAP=false,B=null,TIKET_OK=false;
 function luar(judul,teks,langsung){if(B){B.remove();B=null}$('vLuar').classList.remove('hide');if(judul)$('lJudul').textContent=judul;if(teks)$('lTeks').textContent=teks;$('bLangsung').classList.toggle('hide',!langsung);if(langsung)$('bLangsung').href=W+'/marketing/app#t='+TOK;muat(false)}
 function buka(tiket){$('vLuar').classList.add('hide');muat(tiket?'Memeriksa Tiket Masuk…':'Menyiapkan Marketing…');SIAP=false;B=document.createElement('iframe');B.id='bingkai';B.title='Marketing';B.setAttribute('allow','clipboard-write');B.src=W+'/marketing/app#'+(tiket?'sso='+tiket:'t='+TOK);document.body.appendChild(B);
+ if(tiket)setTimeout(function(){if(!TIKET_OK&&!SIAP)location.replace(W+'/marketing?sso='+encodeURIComponent(tiket))},6000);
  setTimeout(function(){if(!SIAP&&B)luar('Marketing Belum Bisa Dimuat','Halaman Sudah Terbuka, Tetapi Server Marketing Belum Menjawab Di Perangkat Ini. Tutup Lalu Buka Lagi Dari Halaman Pilih Divisi.',!!TOK)},20000)}
 window.addEventListener('message',function(e){if(e.origin!==W||!e.data||!e.data.hexaMarketing)return;var k=e.data.hexaMarketing;
  if(k==='token'&&/^[0-9a-f]{64}$/.test(e.data.token||'')){TOK=e.data.token;simpan('mkt_tok',TOK)}
+ if(k==='tiket')TIKET_OK=true;
  if(k==='siap'){SIAP=true;muat(false)}
  if(k==='keluar'){TOK='';simpan('mkt_tok',null);luar('Masuk Lewat Aplikasi Hexa Tunggal Jaya','Sesi Sudah Berakhir. Buka Lagi Dari Halaman Pilih Divisi.',false)}});
 $('bPortal').onclick=function(){muat('Membuka Hexa Tunggal Jaya…')};
